@@ -17,11 +17,11 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-3">
       <div className="flex-1 relative">
         <Search 
-          className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" 
-          size={20} 
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" 
+          size={18} 
         />
         <input
           type="text"
@@ -29,14 +29,15 @@ const SearchBar = ({ onSearch }) => {
           onChange={(e) => setQuery(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder={UI_TEXT.search.placeholder}
-          className="w-full pl-10 pr-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary-main transition-all duration-300"
+          className="w-full pl-12 pr-4 py-3 bg-white border-2 border-gray-300 text-gray-900 placeholder-gray-400 text-sm font-medium focus:outline-none focus:border-gray-800 transition-all duration-200"
         />
       </div>
       <button 
         onClick={handleSubmit}
-        className="px-6 py-2 bg-secondary-main hover:bg-secondary-hover text-white rounded-lg transition-all duration-300 font-semibold hover:scale-105"
+        className="btn-solid bg-gray-800 text-white px-6 py-3 flex items-center gap-2 hover:bg-gray-900"
       >
-        {UI_TEXT.search.button}
+        <Search size={16} />
+        <span className="hidden sm:inline">{UI_TEXT.search.button}</span>
       </button>
     </div>
   );
