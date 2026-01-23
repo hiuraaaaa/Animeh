@@ -31,3 +31,4 @@ const HomePage = ({ onNavigateToDetail }) => {
   );
 };
 
+export default HomePage;
