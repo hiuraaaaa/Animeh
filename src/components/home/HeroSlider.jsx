@@ -7,48 +7,80 @@ const HeroSlider = ({ items, onItemClick }) => {
   const { currentIndex, goToSlide } = useSlider(items.length);
 
   return (
-    <div className="relative h-96 rounded-xl overflow-hidden mb-8 shadow-2xl">
-      {items.map((item, index) => (
-        <div
-          key={item.slug}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <img 
-            src={item.poster} 
-            alt={item.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
-            <div className="absolute bottom-0 left-0 right-0 p-8 animate-slide-up">
-              <span className="inline-block px-3 py-1 bg-secondary-main text-white text-sm font-semibold rounded-full mb-2">
-                {item.episode_info}
-              </span>
-              <h2 className="text-4xl font-bold text-white mb-4">{item.title}</h2>
-              <button 
-                onClick={() => onItemClick(item.slug)}
-                className="px-6 py-3 bg-secondary-main hover:bg-secondary-hover text-white rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 hover:scale-105"
-              >
-                <Play size={20} fill="white" />
-                {UI_TEXT.buttons.watchNow}
-              </button>
+    <div className="industrial-banner mb-12 relative overflow-hidden bg-white">
+      {/* Dots in corners */}
+      <div className="dot -top-1.5 -left-1.5"></div>
+      <div className="dot -top-1.5 -right-1.5"></div>
+      <div className="dot -bottom-1.5 -left-1.5"></div>
+      <div className="dot -bottom-1.5 -right-1.5"></div>
+
+      {/* Slider Container */}
+      <div className="relative h-[400px] md:h-[500px]">
+        {items.map((item, index) => (
+          <div
+            key={item.slug}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            {/* Image */}
+            <img 
+              src={item.poster} 
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+            
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent">
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
+                {/* Episode Badge */}
+                <div className="inline-block mb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-widest bg-gray-800 text-white px-4 py-2 border-2 border-white">
+                    {item.episode_info}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight max-w-2xl">
+                  {item.title}
+                </h2>
+
+                {/* Watch Button */}
+                <button 
+                  onClick={() => onItemClick(item.slug)}
+                  className="btn-solid bg-white text-gray-900 px-8 py-4 flex items-center gap-3 group"
+                >
+                  <Play size={18} fill="currentColor" className="group-hover:scale-110 transition-transform" />
+                  <span>{UI_TEXT.buttons.watchNow}</span>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-      
-      {/* Dots */}
-      <div className="absolute bottom-4 right-4 flex gap-2">
+        ))}
+      </div>
+
+      {/* Navigation Dots */}
+      <div className="absolute bottom-6 right-6 flex gap-2 z-20">
         {items.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex ? 'bg-secondary-main w-8' : 'bg-white/50 w-2'
+            className={`h-2 rounded-full transition-all duration-300 border border-white ${
+              index === currentIndex 
+                ? 'bg-white w-8' 
+                : 'bg-transparent w-2 hover:bg-white/50'
             }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </div>
+
+      {/* Slide Counter */}
+      <div className="absolute top-6 right-6 z-20 bg-gray-900 bg-opacity-80 px-4 py-2 border-2 border-white">
+        <span className="text-white text-xs font-bold tracking-widest uppercase">
+          {String(currentIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
+        </span>
       </div>
     </div>
   );
