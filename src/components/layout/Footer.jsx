@@ -41,7 +41,7 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <div className="px-3 py-1.5 bg-gray-800 border-2 border-gray-900">
                 <span className="text-[9px] font-bold uppercase tracking-widest text-white">
-                  Powered by React
+                  Powered by Robin
                 </span>
               </div>
             </div>
