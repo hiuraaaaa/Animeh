@@ -14,8 +14,8 @@ const HeroSlider = ({ items, onItemClick }) => {
       <div className="dot -bottom-1.5 -left-1.5"></div>
       <div className="dot -bottom-1.5 -right-1.5"></div>
 
-      {/* Slider Container */}
-      <div className="relative h-[400px] md:h-[500px]">
+      {/* Slider Container - 16:9 Aspect Ratio */}
+      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
         {items.map((item, index) => (
           <div
             key={item.slug}
