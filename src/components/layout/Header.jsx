@@ -96,7 +96,7 @@ const Header = ({ onNavigate, onSearch }) => {
             </div>
             <div>
               <span className="text-sm font-bold text-gray-900 uppercase tracking-tight block">Navigation</span>
-              <span className="text-[10px] text-gray-500 uppercase tracking-wider">Anime Hub</span>
+              <span className="text-[10px] text-gray-500 uppercase tracking-wider">Drachin Hub</span>
             </div>
           </div>
 
@@ -134,7 +134,7 @@ const Header = ({ onNavigate, onSearch }) => {
               <span className="text-[10px] font-bold uppercase tracking-wider text-gray-700">Quick Info</span>
             </div>
             <p className="text-[11px] text-gray-600 leading-relaxed">
-              Stream your favorite anime series with high quality and fast loading times.
+              Stream your favorite drachin series with high quality and fast loading times.
             </p>
           </div>
         </div>
