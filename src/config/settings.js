@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
-  siteName: "NeoirLive",
-  siteTagline: "Nonton Dracin Gratis",
-  siteDescription: "Streaming dracin terbaru dan terpopuler dengan kualitas HD",
+  siteName: "NeoirStream",
+  siteTagline: "Nonton Drachin Gratis",
+  siteDescription: "Streaming drachin terbaru dan terpopuler dengan kualitas HD",
   
   logo: {
     text: "NeoirStream",
@@ -47,7 +47,7 @@ export const UI_TEXT = {
   },
   
   search: {
-    placeholder: "Cari Dracin favorit kamu...",
+    placeholder: "Cari Drachin favorit kamu...",
     button: "Search",
     noResults: "Tidak ada hasil ditemukan",
     resultsFor: "Hasil pencarian untuk"
@@ -61,13 +61,13 @@ export const UI_TEXT = {
   
   loading: {
     default: "Loading...",
-    anime: "Memuat dracin...",
+    anime: "Memuat drachin...",
     video: "Memuat video..."
   },
   
   sections: {
     latest: "Rilis Terbaru",
-    popular: "Dracin Populer",
+    popular: "Drachin Populer",
     recommendations: "Rekomendasi",
     episodes: "Episode"
   },
