@@ -1,5 +1,5 @@
 export const SITE_CONFIG = {
-  siteName: "NeoirStream",
+  siteName: "LuminaHub",
   siteTagline: "Nonton Drachin Gratis",
   siteDescription: "Streaming drachin terbaru dan terpopuler dengan kualitas HD",
   
@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
   preloader: {
     enabled: true,
     duration: 2000,
-    siteName: "NeoirStream",
+    siteName: "LuminaHub",
     tagline: "Loading Your Favorite...",
   },
   
