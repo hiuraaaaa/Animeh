@@ -4,8 +4,8 @@ export const SITE_CONFIG = {
   siteDescription: "Streaming drachin terbaru dan terpopuler dengan kualitas HD",
   
   logo: {
-    text: "NeoirStream",
-    highlight: "Stream",
+    text: "Lumina",
+    highlight: "Hub",
     icon: "▶"
   },
   
